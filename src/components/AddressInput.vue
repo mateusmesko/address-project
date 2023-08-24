@@ -4,21 +4,23 @@
 			<v-row class="ma-1">
 				<v-col md="6">
 					<v-text-field type="number" counter="8" 
-					:rules="[rules.requiredCep, rules.countCaracters]" 
-					:label="$t('addressInput.text.CEP')" 
-					v-model="cep"
-					prepend-icon="mdi-map-marker"
+						:rules="[rules.requiredCep, rules.countCaracters]" 
+						:label="$t('addressInput.text.CEP')" 
+						v-model="cep"
+						:prepend-icon="$t('addressInput.icons.CEP')"
 					></v-text-field>
 				</v-col>
 
 				<v-col md="3">
 					<v-btn :disabled="!isCepInputValid" color="primary" @click="getAddress" elevation="2">
+						<v-icon light>{{$t('addressInput.icons.search')}}</v-icon>
 						{{$t('addressInput.text.btnSearch')}}
 					</v-btn>
 				</v-col>
 
 				<v-col md="3">
 					<v-btn :disabled="!isAddressValid" color="success" @click="saveAddress" elevation="2">
+						<v-icon light>{{$t('addressInput.icons.save')}}</v-icon>
 						{{$t('addressInput.text.btnSave')}}
 					</v-btn>
 				</v-col>
@@ -153,8 +155,8 @@ export default {
 	},
 	created() {
 		if(this.receivedCep){
-		this.cep = this.receivedCep
-		this.getAddress()
+			this.cep = this.receivedCep
+			this.getAddress()
 		}
 
 		if (this.initialContent) {
