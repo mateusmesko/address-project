@@ -20,8 +20,15 @@
             "optionsActions":"Ações",
             "newAddress":"Novo endereço",
             "editAddress":"Editar endereço"
+        },
+        "icons":{
+            "edit":"mdi-pencil",
+            "delete":"mdi-delete",
+            "new":"mdi-plus",
+            "CEP":"mdi-map-marker"
         }
     },
+
     "addressModal":{
         "icons":{
             "close":"mdi-close"
@@ -30,6 +37,7 @@
             "close":"Fechar"
         }
     },
+
     "addressInput":{
         "text":{
             "CEP":"CEP",
@@ -48,6 +56,11 @@
             "invalidCep": "O CEP deve conter exatamente 8 caracteres numéricos.",
             "warningAddress":"Por favor, forneça um CEP válido contendo exatamente 8 caracteres numéricos para que eu possa realizar a busca.",
             "emptyTitle":"O campo TITULO não pode estar vazio."
+        },
+        "icons":{
+            "search":"mdi-map-search-outline",
+            "save":"mdi-content-save",
+            "CEP":"mdi-map-marker"
         }
     }
 }

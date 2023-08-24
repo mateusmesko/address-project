@@ -13,6 +13,7 @@
 								label="Informe o CEP"
 								type="number"
 								:rules="[rules.required, rules.countCaracters]"
+								:prepend-icon="$t('addressList.icons.CEP')"
 							></v-text-field>
 						</v-col>
 				
@@ -20,6 +21,7 @@
 							<v-btn :disabled="!isCepInputValid" block color="success"
 								elevation="2" @click="showModal"
 							>
+								<v-icon light>{{$t('addressList.icons.new')}}</v-icon>
 								{{ $t('addressList.actions.searchCEP') }}
 							</v-btn>
 						</v-col>
@@ -63,11 +65,13 @@
 							<td>{{ address.logradouro }}</td>
 
 							<td class="text-center">
-								<v-btn class="mx-1" @click="deleteAddress(ID)" color="red" small>
+								<v-btn class="mx-1" @click="deleteAddress(ID)" color="error" small>
+									<v-icon light>{{$t('addressList.icons.delete')}}</v-icon>
 									{{ $t('addressList.actions.deleteAddress') }}
 								</v-btn>
 
 								<v-btn class="mx-1" @click="editAddress(ID)" color="primary" small>
+									<v-icon light>{{$t('addressList.icons.edit')}}</v-icon>
 									{{ $t('addressList.actions.editAddress') }}
 								</v-btn>
 							</td>
