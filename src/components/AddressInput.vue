@@ -165,7 +165,7 @@ export default {
 			const minutes = date.getUTCMinutes()
 			const seconds = date.getUTCSeconds()
 
-			return ` ${year}-${month}-${day} ${hours}:${minutes}:${seconds}`
+			return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`
 		},
 	},
 	

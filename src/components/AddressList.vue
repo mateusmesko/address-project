@@ -65,7 +65,7 @@
 							<td>{{ address.logradouro }}</td>
 
 							<td class="text-center">
-								<v-btn class="mx-1" @click="deleteAddress(ID)" color="error" small>
+								<v-btn class="mx-1" @click="deleteAddress(address.id)" color="error" small>
 									<v-icon light>{{$t('addressList.icons.delete')}}</v-icon>
 									{{ $t('addressList.actions.deleteAddress') }}
 								</v-btn>
@@ -148,6 +148,7 @@ export default {
 			
 			const address = this.addressList[id]
 			if (address) {
+				console.log(id)
 				this.modalContent = JSON.stringify(address)
 			} else {
 				this.modalContent = ''
