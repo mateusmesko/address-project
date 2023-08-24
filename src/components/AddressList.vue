@@ -157,7 +157,8 @@ export default {
 
 		getAddresses() {
 			this.addressList = JSON.parse(localStorage.getItem('savedAddresses')) || {}
-			console.log(this.addressList)
+			const addressArray = Object.values(this.addressList);
+			this.addressList = addressArray.slice().sort((a, b) => new Date(b.created) - new Date(a.created));
 		},
 	},
 
