@@ -148,7 +148,6 @@ export default {
 			
 			const address = this.addressList[id]
 			if (address) {
-				console.log(id)
 				this.modalContent = JSON.stringify(address)
 			} else {
 				this.modalContent = ''

@@ -1,12 +1,6 @@
 export default {
-	ADD_ADDRESS(state, address) {
-		state.addresses.unshift(address);
-	},
-	UPDATE_ADDRESS(state, { index, address }) {
-		state.addresses[index] = address;
-	},
-	DELETE_ADDRESS(state, index) {
-		state.addresses.splice(index, 1);
-	},
-  };
-  
+	updateSavedAddresses(state, addresses) {
+		state.savedAddresses = addresses;
+		localStorage.setItem('savedAddresses', JSON.stringify(addresses));
+	}
+};
