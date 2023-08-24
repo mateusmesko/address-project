@@ -47,9 +47,10 @@
             "borhood":"Bairro",
 
             "btnSearch":"Buscar",
-            "btnSave":"Salvar"
+            "btnSave":"Salvar",
 
-            
+            "created":"Data de criação",
+            "updated":"Ultima atualização"
         },
         "validation": {
             "emptyCep": "O campo CEP não pode estar vazio.",

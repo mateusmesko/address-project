@@ -149,10 +149,26 @@ export default {
 				data.push({ infoTittle: this.$t('addressInput.text.street'), value: this.addressData.logradouro })
 				data.push({ infoTittle: this.$t('addressInput.text.borhood'), value: this.addressData.bairro })
 			}
-			
+			if(this.addressOld){
+				data.push({ infoTittle: this.$t('addressInput.text.created'), value: this.formatedTime(this.addressData.created) })
+				data.push({ infoTittle: this.$t('addressInput.text.updated'), value: this.formatedTime(this.addressData.updated)})
+			}
 			return data
-		}
+		},
+		formatedTime(dateString){
+			const date = new Date(dateString)
+
+			const day = date.getUTCDate()
+			const month = date.getUTCMonth() + 1 // Months are zero-based, so we add 1
+			const year = date.getUTCFullYear()
+			const hours = date.getUTCHours()
+			const minutes = date.getUTCMinutes()
+			const seconds = date.getUTCSeconds()
+
+			return ` ${year}-${month}-${day} ${hours}:${minutes}:${seconds}`
+		},
 	},
+	
 	created() {
 		if(this.receivedCep){
 			this.cep = this.receivedCep
